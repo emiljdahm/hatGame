@@ -13,7 +13,7 @@ class Field {
 }
 */
 
-function generateField(rows,cols){
+function generateField(rows,cols, perct){
   //for loop to create the field
 for(let i = 0; i < rows; i++){
 
@@ -28,10 +28,26 @@ for(let i = 0; i < rows; i++){
  gameField.push(row)
 }
 
-/*
-const objRowSelc = Math.floor(Math.random()*(gameField.length))
-const objcColSelc = Math.floor(Math.random()*(gameField.length))
-*/
+// NEEDS TO place randomly (row x cols times)/perct (limits the dificulty)
+
+//const objRowSelc = Math.floor(Math.random()*(gameField.length))
+//const objColSelc = Math.floor(Math.random()*(gameField.length))
+//console.log(`obj R = ${objRowSelc} and obj C = ${objColSelc}`)
+
+for(let i = 0; i < gameField.length; i++){
+  gameField
+  for(let j = 0; j < gameField[i].length; j++){
+    //1-10 for dificulty 1 super hard 10 super easy 5 reccommended
+    const coinFlip = Math.floor(Math.random()*(perct))
+  if(coinFlip === 1){
+    gameField[i][j] = hole;
+  } else {
+    continue;
+  }
+}
+  
+}
+
 //random set goal
 const goalrowSelc = Math.floor(Math.random()*(gameField.length))
 const goalcolSelc = Math.floor(Math.random()*(gameField.length))
@@ -48,11 +64,11 @@ console.log(goalcolSelc)
 
 
 
-// set the field in string format 
+// set the field in string format and grid 
 let stringField = gameField.join('' + '\n').replace(/,/g, '' )
 console.log(gameField)
 console.log(stringField)
 }
 
 
-generateField(5,5)
+generateField(5,5,5)
