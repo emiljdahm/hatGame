@@ -28,9 +28,10 @@ for(let i = 0; i < rows; i++){
  gameField.push(row)
 }
 
+/*
 const objRowSelc = Math.floor(Math.random()*(gameField.length))
 const objcColSelc = Math.floor(Math.random()*(gameField.length))
-
+*/
 //random set goal
 const goalrowSelc = Math.floor(Math.random()*(gameField.length))
 const goalcolSelc = Math.floor(Math.random()*(gameField.length))
@@ -47,9 +48,10 @@ console.log(goalcolSelc)
 
 
 
-
-let stringField = gameField.join('').replace(/,/g, '')
+// set the field in string format 
+let stringField = gameField.join('' + '\n').replace(/,/g, '' )
 console.log(gameField)
+console.log(stringField)
 }
 
 
